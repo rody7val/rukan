@@ -25,7 +25,7 @@ angular
 
 function MainController ($scope, $http, $location) {
   $scope.formData = {};
-  $scope.nav = '/';
+  $scope.page = 'home';
 
   // Cuando se cargue la página, pide del API todos los Anuncios
   $http.get('/api/anuncios')
@@ -52,7 +52,7 @@ function MainController ($scope, $http, $location) {
 
   // Borra un Anuncio despues de checkearlo como acabado
   $scope.borrarAnuncio = function(id) {
-    $http.delete('/api/anuncio/' + id)
+    $http.delete('/api/anuncio' + id)
       .success(function(data) {
         $scope.anuncios = data;
         console.log(data);
@@ -70,9 +70,9 @@ function MainController ($scope, $http, $location) {
 }
 
 function AboutController ($scope) {
-    $scope.nav = 'about';
+    $scope.page = 'about';
 }
 
 function ContactController ($scope) {
-    $scope.nav = 'contact';
+    $scope.page = 'contact';
 }
