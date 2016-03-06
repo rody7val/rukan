@@ -6,10 +6,6 @@
   "license": "MIT",
   "repository": "https://github.com/rody7val/rukan",
   "main": "server.js",
-  "engines": {
-    "node": "0.10.x",
-    "npm": "2.14.x"
-  },
   "dependencies": {
     "body-parser": "latest",
     "cors": "latest",
