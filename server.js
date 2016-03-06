@@ -37,6 +37,7 @@ var api = require('./routes/api')(app, express);
 app.use('/', api);
 
 // Escucha en el puerto 8080 y corre el server
-app.listen(8080, function() {  
-  console.log('App listening on port 8080');
+var port = process.env.PORT || 8080;
+app.listen(port, function() {  
+  console.log('App listening on port'+port);
 });
