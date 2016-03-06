@@ -1,11 +1,15 @@
 {
   "name": "rukan-web",
   "version": "0.0.1",
-  "author": "Rodolfo Valguarnera",
   "description": "Rukan website",
-  "repository": "https://github.com/rody7val/rukan",
+  "author": "Rodolfo Valguarnera",
   "license": "MIT",
+  "repository": "https://github.com/rody7val/rukan",
   "main": "server.js",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "2.14.x"
+  },
   "dependencies": {
     "body-parser": "latest",
     "cors": "latest",

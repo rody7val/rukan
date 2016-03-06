@@ -24,8 +24,10 @@ var app = express();
   // Simula DELETE y PUT                      
   app.use(methodOverride());
 
+var url_DB = proccess.env.DATABASE_URL || 'mongodb://localhost:27017/rukan'
+
 // Conexión con la base de datos
-mongoose.connect('mongodb://localhost:27017/angular-todo', function (err){
+mongoose.connect(url_DB, function (err){
   if (err) console.error(err.name+': '+err.message);
   else console.log("Connected to database");
 });
