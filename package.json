@@ -1,0 +1,20 @@
+{
+  "name": "rukan-web",
+  "version": "0.0.1",
+  "author": "Rodolfo Valguarnera",
+  "description": "Rukan website",
+  "repository": "https://github.com/rody7val/rukan",
+  "license": "MIT",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "latest",
+    "cors": "latest",
+    "express": "latest",
+    "geocoder": "^0.2.2",
+    "method-override": "latest",
+    "mongoose": "latest",
+    "mongoose-double": "0.0.1",
+    "morgan": "latest",
+    "serve-favicon": "latest"
+  }
+}

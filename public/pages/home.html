@@ -1,0 +1,25 @@
+<div class="jumbotron text-center">  
+	<h2>Crear anuncio</h2> 
+	<!-- Lista de Anuncios -->
+	<div class="checkbox" ng-repeat="anuncio in anuncios">  
+    	<label>
+        	<input type="checkbox" ng-click="borrarAnuncio(anuncio._id)"> {{ anuncio.titulo }}
+    	</label>
+	</div>  
+	<!-- Formulario para insertar nuevos Anuncios -->  
+	<form method="get">  
+	    <div class="form-group">
+	        <input 
+	        	type="text" 
+	        	class="form-control input-lg text-center" 
+	        	placeholder="Ingresa un titulo" 
+	        	ng-model="formData.titulo">
+	    </div>
+	    <button 
+	    	class="btn btn-primary btn-lg" 
+	    	ng-click="crearAnuncio()">
+	        Añadir
+	    </button>
+	</form>  
+</div>  
+<div id='map'></div>
