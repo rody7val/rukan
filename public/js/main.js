@@ -52,7 +52,7 @@ function MainController ($scope, $http, $location) {
 
   // Borra un Anuncio despues de checkearlo como acabado
   $scope.borrarAnuncio = function(id) {
-    $http.delete('/api/anuncio' + id)
+    $http.delete('/api/anuncio/' + id)
       .success(function(data) {
         $scope.anuncios = data;
         console.log(data);
