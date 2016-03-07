@@ -1,5 +1,5 @@
 <div class="jumbotron text-center">  
-	<h2>Crear anuncio</h2> 
+	<h1>Crear anuncio</h1> 
 	<!-- Lista de Anuncios -->
 	<div class="checkbox" ng-repeat="anuncio in anuncios">  
     	<label>
@@ -7,20 +7,20 @@
     	</label>
 	</div>  
 	<!-- Formulario para insertar nuevos Anuncios -->  
-	<form method="get">  
+	<form class="form-inline">  
 	    <div class="form-group">
 	        <input 
 	        	type="text" 
-	        	class="form-control input-lg text-center" 
+	        	class="form-control text-xs-center" 
 	        	placeholder="Ingresa un titulo" 
 	        	ng-model="formData.titulo">
 	    </div>
 	    <button 
-	    	class="btn btn-primary btn-lg" 
+	    	class="btn btn-primary-outline" 
 	    	ng-click="crearAnuncio()">
 	        Añadir
 	    </button>
 	</form>  
 </div>  
-<div id='map'></div>
+<leaflet></leaflet>
 <p>{{page}}</p>

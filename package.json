@@ -1,6 +1,6 @@
 {
   "name": "rukan-web",
-  "version": "0.1.0", 
+  "version": "0.1.0",
   "description": "Rukan website",
   "author": "Rodolfo Valguarnera",
   "license": "MIT",
@@ -16,5 +16,9 @@
     "mongoose-double": "0.0.1",
     "morgan": "latest",
     "serve-favicon": "latest"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-copy": "^1.0.0"
   }
 }

@@ -1,0 +1,27 @@
+{
+  "name": "rukan-web",
+  "description": "Rukan website",
+  "main": "server.js",
+  "authors": [
+    "Rodolfo Valguarnera"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rody7val/rukan",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.7",
+    "bootstrap": "v4.0.0-alpha.2",
+    "angular-route": "1.2.3",
+    "angular-leaflet-directive": "^0.10.0",
+    "leaflet": "0.7.5"
+  }
+}

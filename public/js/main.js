@@ -1,8 +1,9 @@
 angular
-  .module('rukan', ['ngRoute'])
+  .module('rukan', ['ngRoute', 'leaflet-directive'])
   .controller('MainController', MainController)
   .controller('AboutController', AboutController)
   .controller('ContactController', ContactController)
+  .controller('MapboxController', MapboxController)
   // Configuración de las rutas
   .config(function($routeProvider) {
     $routeProvider
@@ -22,6 +23,16 @@ angular
             redirectTo: '/'
         });
   });
+
+function MapboxController ($scope){
+  angular.extend($scope, {
+    london: {
+      lat: 51.505,
+      lng: -0.09,
+      zoom: 4
+    }
+  });
+}
 
 function MainController ($scope, $http, $location) {
   $scope.formData = {};
