@@ -16,19 +16,20 @@
   },
   "dependencies": {
     "body-parser": "latest",
+    "bower": "^1.7.7",
     "cors": "latest",
+    "debowerify": "^1.4.1",
     "express": "latest",
     "geocoder": "^0.2.2",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-copy": "^1.0.0",
     "method-override": "latest",
     "mongoose": "latest",
     "mongoose-double": "0.0.1",
     "morgan": "latest",
-    "serve-favicon": "latest",
-    "debowerify": "^1.4.1",
-    "grunt": "^0.4.5",
-    "grunt-cli": "0.1.13",
-    "grunt-browserify": "^4.0.1",
-    "grunt-contrib-copy": "^1.0.0"
+    "serve-favicon": "latest"
   },
   "browserify": {
     "transform": [
