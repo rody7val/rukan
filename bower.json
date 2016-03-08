@@ -18,11 +18,14 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.2.7",
+    "angular": "~1.2.x",
     "bootstrap": "v4.0.0-alpha.2",
-    "angular-route": "1.2.3",
-    "angular-leaflet-directive": "^0.10.0",
+    "angular-route": "~1.2.x",
+    "angular-leaflet-directive": "~0.10.x",
     "leaflet": "0.7.5",
     "jade": "^1.11.0"
+  },
+  "resolutions": {
+    "angular": "~1.2.x"
   }
 }
