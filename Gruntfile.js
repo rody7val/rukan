@@ -3,6 +3,10 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
 
+    browserify: {
+      'public/js/bundle.js': ['src/js/main.js']
+    },
+
     copy: {
       main: {
         files: [
@@ -34,7 +38,8 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-browserify');
 
-  grunt.registerTask('default', ['copy']);
+  grunt.registerTask('default', ['browserify','copy']);
 
 };

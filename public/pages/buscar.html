@@ -1,9 +1,9 @@
 <div class="jumbotron text-center">  
-	<h1>Crear anuncio</h1> 
-	<!-- Lista de Anuncios -->
-	<div class="checkbox" ng-repeat="anuncio in anuncios">  
+	<h1>Buscar anuncios</h1>
+	<!-- Lista de Busqueda -->
+	<div class="radio" ng-repeat="busqueda in busquedas">  
     	<label>
-        	<input type="checkbox" ng-click="borrarAnuncio(anuncio._id)"> {{ anuncio.titulo }}
+        	<input type="radio" ng-click="localizarBusqueda(busqueda.geometry.location)"> {{ busqueda.formatted_address }}
     	</label>
 	</div>  
 	<!-- Formulario para insertar nuevos Anuncios -->  
@@ -12,15 +12,13 @@
 	        <input 
 	        	type="text" 
 	        	class="form-control text-xs-center" 
-	        	placeholder="Ingresa un titulo" 
-	        	ng-model="formData.titulo">
+	        	placeholder="Ingresa una direccion" 
+	        	ng-model="formData.search">
 	    </div>
 	    <button 
 	    	class="btn btn-primary-outline" 
-	    	ng-click="crearAnuncio()">
+	    	ng-click="buscarAnuncio(formData.search)">
 	        Añadir
 	    </button>
 	</form>  
 </div>  
-<leaflet></leaflet>
-<p>{{page}}</p>

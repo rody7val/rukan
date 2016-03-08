@@ -1,15 +1,24 @@
+require('angular');
+require('angular-route');
+require('leaflet');
+require('angular-leaflet-directive');
+
 angular
   .module('rukan', ['ngRoute', 'leaflet-directive'])
   .controller('MainController', MainController)
   .controller('AboutController', AboutController)
   .controller('ContactController', ContactController)
-  .controller('MapboxController', MapboxController)
+  .controller('CreateController', CreateController)
   // Configuración de las rutas
   .config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl : 'pages/home.html',
+            templateUrl : 'pages/buscar.html',
             controller  : 'MainController'
+        })
+        .when('/crear', {
+            templateUrl : 'pages/crear.html',
+            controller  : 'CreateController'
         })
         .when('/acerca', {
             templateUrl : 'pages/acerca.html',
@@ -24,19 +33,51 @@ angular
         });
   });
 
-function MapboxController ($scope){
-  angular.extend($scope, {
-    london: {
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 4
-    }
-  });
-}
 
-function MainController ($scope, $http, $location) {
+function MainController($scope, $http, $location){
+
   $scope.formData = {};
   $scope.page = 'home';
+  $scope.map = {};
+  $scope.markers = {};
+
+  $scope.buscarAnuncio = function(search){
+    $http.get('/api/search/' + search)
+      .success(function(data){
+        $scope.formData = {};
+        $scope.busquedas = data.results;
+        console.log(data);
+      })
+      .error(function(data) {
+        console.log('Error:' + data);
+      });
+  }
+
+  $scope.localizarBusqueda = function(location){
+    $location.search({c: location.lat+':'+location.lng+':4'});
+    $scope.markers = {
+      osloMarker: {
+        lat: location.lat,
+        lng: location.lng,
+        message: "I want to travel here!",
+        focus: true,
+        draggable: false
+      }
+    }
+  }
+
+  // Activacion del menu
+  $scope.menuClass = function(page) {
+    var current = $location.path().substring(1);
+    return page === current ? "active" : "";
+  };
+
+}
+
+function CreateController ($scope, $http) {
+
+  $scope.formData = {};
+  $scope.page = 'crear';
 
   // Cuando se cargue la página, pide del API todos los Anuncios
   $http.get('/api/anuncios')
@@ -73,11 +114,6 @@ function MainController ($scope, $http, $location) {
       });
   };
 
-  // Activacion del menu
-  $scope.menuClass = function(page) {
-    var current = $location.path().substring(1);
-    return page === current ? "active" : "";
-  };
 }
 
 function AboutController ($scope) {

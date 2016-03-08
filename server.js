@@ -18,6 +18,9 @@ var app = express();
   app.use(express.static(path.join(__dirname + '/public')));
   // Muestra un log de todos los request en la consola        
   app.use(logger('dev')); 
+  // configurar las vistas
+  // app.set('views', path.join(__dirname, 'views'));
+  // app.set('view engine', 'jade');
   // Permite cambiar el HTML con el método POST   
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());

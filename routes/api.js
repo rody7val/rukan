@@ -5,7 +5,7 @@ module.exports = function (app, express) {
 
   var api = express.Router();
 
-  app.get('/api/search', anuncioController.search);
+  app.get('/api/search/:search', anuncioController.search);
   app.get('/api/anuncios', anuncioController.all);
   app.post('/api/anuncio', anuncioController.new);
   app.delete('/api/anuncio/:anuncio', anuncioController.delete);

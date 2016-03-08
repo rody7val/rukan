@@ -1,6 +1,6 @@
 var Anuncio = require('../models/anuncio');
 
-// GET para buscar anuncios por ciudad
+// GET para buscar geolocalizar una ciudad mediante el nombre
 exports.search = function (req, res){
     var geocoder = require('geocoder');
     geocoder.geocode(req.params.search, function(err, data){
@@ -67,5 +67,5 @@ exports.delete = function (req, res) {
 // Carga una vista HTML simple donde irá nuestra Single App Page
 // Angular Manejará el Frontend
 exports.sendFile = function (req, res, next) {  
-    res.sendFile('./public/index.html');
+    res.sendFile('../public/index.html');
 }

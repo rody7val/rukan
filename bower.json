@@ -22,6 +22,7 @@
     "bootstrap": "v4.0.0-alpha.2",
     "angular-route": "1.2.3",
     "angular-leaflet-directive": "^0.10.0",
-    "leaflet": "0.7.5"
+    "leaflet": "0.7.5",
+    "jade": "^1.11.0"
   }
 }
