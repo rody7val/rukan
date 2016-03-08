@@ -7,7 +7,8 @@
   "repository": "https://github.com/rody7val/rukan",
   "main": "server.js",
   "scripts": {
-    "postinstall": "grunt"
+    "postinstall": "grunt",
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "latest",
@@ -18,19 +19,15 @@
     "mongoose": "latest",
     "mongoose-double": "0.0.1",
     "morgan": "latest",
-    "serve-favicon": "latest"
+    "serve-favicon": "latest",
+    "debowerify": "^1.4.1",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^4.0.1",
+    "grunt-contrib-copy": "^1.0.0"
   },
   "browserify": {
     "transform": [
       "debowerify"
     ]
-  },
-  "devDependencies": {
-    "debowerify": "^1.4.1",
-    "grunt": "^0.4.5",
-    "grunt-browserify": "^4.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jade": "^1.0.0",
-    "grunt-contrib-watch": "^0.6.1"
   }
 }
